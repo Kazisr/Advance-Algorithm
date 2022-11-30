@@ -2,9 +2,6 @@
 using namespace std;
 int goldMineJMP(int goldMine[100][100], int row, int col)
 {
-//// cout<<"function worked"<<endl;
-////
-//// cout<< col<<" "<<row;
     int DPtable[100][100], i, j;
     for(i = 0; i < row; i++) DPtable[i][0] = goldMine[i][0];
     for(j = 1; j < col; j++)
@@ -20,7 +17,6 @@ int goldMineJMP(int goldMine[100][100], int row, int col)
 
                 DPtable[i][j]=goldMine[i][j]+max((max(DPtable[i][j-
                                                       1],DPtable[i+1][j-1])),DPtable[i-1][j-1]);
-
             }
         }
     }
@@ -35,6 +31,7 @@ int goldMineJMP(int goldMine[100][100], int row, int col)
         cout<<endl;
     }
     cout<<endl;
+    
     int maxValue = 0;
     for (i = 0; i < row; i++)
     {
